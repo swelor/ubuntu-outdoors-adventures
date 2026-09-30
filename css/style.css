@@ -1,0 +1,244 @@
+/* ============================================
+   Ubuntu Outdoor Adventures - Main Stylesheet
+   ============================================ */
+
+/* ---------- Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    color: #000000;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: #2e5d34;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header img {
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 28pt;
+    color: #ffffff;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+    background-color: #1e3d22;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Pseudo-class interactivity */
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #4a8c52;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+nav ul li a:active {
+    background-color: #2e5d34;
+}
+
+/* ---------- Main Content ---------- */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+h2 {
+    color: #2e5d34;
+    border-bottom: 2px solid #2e5d34;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #1e3d22;
+    margin-bottom: 8px;
+}
+
+/* ---------- Activities (Three-Column Layout) ---------- */
+#activities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 15px;
+}
+
+#activities h2 {
+    grid-column: 1 / -1;
+}
+
+#activities article {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-left: 4px solid #4a8c52;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#activities article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Hyperlinks ---------- */
+a {
+    color: #2e5d34;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #4a8c52;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: #1e3d22;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #a8d5a8;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* ============================================
+   CSS SPRITES - Navigation Icons
+   ============================================ */
+.nav-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/sprites.png');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.icon-home    { background-position: 0 0; }
+.icon-about   { background-position: -20px 0; }
+.icon-packages{ background-position: -40px 0; }
+.icon-contact { background-position: -60px 0; }
+
+/* ============================================
+   RESPONSIVE DESIGN - Media Queries
+   ============================================ */
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 22pt;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav ul li a {
+        border-bottom: 1px solid #2e5d34;
+    }
+
+    #activities {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 18pt;
+    }
+
+    #activities {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        font-size: 11pt;
+    }
+
+    h2 {
+        font-size: 16pt;
+    }
+}
+
+/* ============================================
+   THREE-COLUMN PAGE LAYOUT
+   ============================================ */
+.three-column {
+    display: flex;
+    gap: 20px;
+}
+
+.three-column .col-left,
+.three-column .col-right {
+    flex: 1;
+    background-color: #f0f7f0;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.three-column .col-main {
+    flex: 2;
+    padding: 15px;
+}

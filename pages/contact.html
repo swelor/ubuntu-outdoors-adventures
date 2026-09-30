@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Ubuntu Outdoor Adventures</title>
+    <link rel="stylesheet" href="../css/style.css" media="screen">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+</head>
+<body>
+
+    <header>
+        <img src="../images/logo.png" alt="Ubuntu Outdoor Adventures Logo" width="80" height="80">
+        <h1>Ubuntu Outdoor Adventures</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Tour Packages</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Contact Us</h2>
+
+        <section>
+            <h3>Get in Touch</h3>
+            <p><strong>Phone:</strong> +27 11 123 4567</p>
+            <p><strong>Email:</strong> <a href="mailto:info@ubuntuoutdoor.co.za">info@ubuntuoutdoor.co.za</a></p>
+            <p><strong>Address:</strong> 123 Adventure Road, Johannesburg, 2000</p>
+        </section>
+
+        <!-- Named fragment for booking form -->
+        <section id="booking">
+            <h3>Online Booking Enquiry Form</h3>
+            <p>Fill in the form below and our team will contact you within 24 hours.</p>
+
+            <form action="submit_booking.php" method="post" enctype="multipart/form-data">
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="fullname">Full Name:</label><br>
+                    <input type="text" id="fullname" name="fullname"
+                           required placeholder="John Doe"
+                           accesskey="n" tabindex="1"><br><br>
+
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email"
+                           required placeholder="john@example.com"
+                           accesskey="e" tabindex="2"><br><br>
+
+                    <label for="phone">Contact Number:</label><br>
+                    <input type="tel" id="phone" name="phone"
+                           required placeholder="+27 82 123 4567"
+                           accesskey="p" tabindex="3"><br><br>
+
+                    <label for="website">Website (optional):</label><br>
+                    <input type="url" id="website" name="website"
+                           placeholder="https://yourwebsite.com"
+                           accesskey="w" tabindex="4"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Booking Details</legend>
+
+                    <label for="package">Preferred Adventure Package:</label><br>
+                    <select id="package" name="package" required
+                            accesskey="k" tabindex="5">
+                        <option value="">-- Select a Package --</option>
+                        <option value="drakensberg">Drakensberg Summit Hike</option>
+                        <option value="table-mountain">Table Mountain Sunrise Trek</option>
+                        <option value="garden-route">Garden Route Camping Safari</option>
+                        <option value="magaliesberg">Magaliesberg MTB Trail</option>
+                        <option value="kruger">Kruger Birding & Nature Walk</option>
+                    </select><br><br>
+
+                    <label for="participants">Number of Participants:</label><br>
+                    <input type="number" id="participants" name="participants"
+                           min="1" max="20" value="2" required
+                           accesskey="r" tabindex="6"><br><br>
+
+                    <label for="bookingdate">Preferred Booking Date:</label><br>
+                    <input type="date" id="bookingdate" name="bookingdate"
+                           required accesskey="d" tabindex="7"><br><br>
+
+                    <label for="bookingtime">Preferred Time:</label><br>
+                    <input type="time" id="bookingtime" name="bookingtime"
+                           required accesskey="t" tabindex="8"><br><br>
+
+                    <label for="activity">Favourite Activity:</label><br>
+                    <input list="activities" id="activity" name="activity"
+                           placeholder="Start typing..."
+                           accesskey="a" tabindex="9">
+                    <datalist id="activities">
+                        <option value="Hiking">
+                        <option value="Camping">
+                        <option value="Mountain Biking">
+                        <option value="Guided Nature Walk">
+                        <option value="Bird Watching">
+                        <option value="Photography">
+                    </datalist><br><br>
+
+                    <label for="difficulty">Preferred Difficulty Level:</label><br>
+                    <input type="range" id="difficulty" name="difficulty"
+                           min="1" max="5" value="3"
+                           accesskey="f" tabindex="10">
+                    <span id="difficultyValue">3 - Moderate</span><br><br>
+<script>
+  const difficultyLabels = {
+    1: '1 - Easy',
+    2: '2 - Medium',
+    3: '3 - Moderate',
+    4: '4 - Hard',
+    5: '5 - Expert'
+  };
+  document.getElementById('difficulty').addEventListener('input', () => {
+    const value = parseInt(document.getElementById('difficulty').value);
+    document.getElementById('difficultyValue').textContent = `${value} - ${difficultyLabels[value]}`;
+  });
+</script>
+                    <label for="colour">Preferred Brand Colour:</label><br>
+                    <input type="color" id="colour" name="colour"
+                           value="#2e5d34"
+                           accesskey="c" tabindex="11"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+
+                    <label for="comments">Additional Comments:</label><br>
+                    <textarea id="comments" name="comments" rows="5" cols="40"
+                              placeholder="Tell us about any special requirements..."
+                              accesskey="m" tabindex="12"></textarea><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Submit Your Enquiry</legend>
+
+                    <button type="submit" name="submit"
+                            accesskey="s" tabindex="13">
+                        Submit Booking Enquiry
+                    </button>
+
+                    <button type="reset" name="reset"
+                            accesskey="x" tabindex="14">
+                        Clear Form
+                    </button>
+
+                    <!-- Image button alternative -->
+                    <!-- <input type="image" src="../images/submit-btn.png"
+                         alt="Submit Booking" width="120" height="40"
+                         tabindex="13"> -->
+                </fieldset>
+
+            </form>
+        </section>
+
+        <p><a href="../index.html">Back to Home</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ubuntu Outdoor Adventures. All rights reserved.</p>
+        <p>Email: <a href="mailto:info@ubuntuout

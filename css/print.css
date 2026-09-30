@@ -1,0 +1,80 @@
+/* ============================================
+   PRINT STYLESHEET - Ubuntu Outdoor Adventures
+   ============================================ */
+
+@media print {
+    /* Hide non-essential elements */
+    nav,
+    footer,
+    .no-print,
+    #links {
+        display: none;
+    }
+
+    /* Reset colors for print */
+    body {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 12pt;
+        color: #000000;
+        background: #ffffff;
+    }
+
+    header {
+        background: none;
+        color: #000000;
+        border-bottom: 2px solid #000000;
+        display: block;
+        text-align: center;
+    }
+
+    header h1 {
+        color: #000000;
+        font-size: 24pt;
+    }
+
+    main {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        background: none;
+    }
+
+    h2 {
+        color: #000000;
+        border-bottom: 1px solid #000000;
+    }
+
+    h3 {
+        color: #000000;
+    }
+
+    #activities {
+        display: block;
+    }
+
+    #activities article {
+        background: none;
+        border: 1px solid #000000;
+        page-break-inside: avoid;
+        margin-bottom: 15px;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    /* Show URL after links */
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        font-style: italic;
+    }
+
+    /* Ensure images print */
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+}
